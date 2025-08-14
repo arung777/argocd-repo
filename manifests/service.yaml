@@ -10,3 +10,19 @@ spec:
       port: 80
       targetPort: 5000
   type: LoadBalancer
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejs-simple-app-service
+  labels:
+    app: nodejs-simple-app
+spec:
+  selector:
+    app: nodejs-simple-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
