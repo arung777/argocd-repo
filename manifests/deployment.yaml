@@ -38,6 +38,6 @@ spec:
     spec:
       containers:
       - name: nodejs-simple-app-container
-        image: "gcr.io/google-samples/node-hello:1.0"
+        image: "nginxdemos/hello:latest"
         ports:
         - containerPort: 8080
