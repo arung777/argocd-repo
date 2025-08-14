@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-simple-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-simple-app
+  template:
+    metadata:
+      labels:
+        app: python-simple-app
+    spec:
+      containers:
+      - name: python-simple-app-container
+        image: python:3.9-slim
+        ports:
+        - containerPort: 5000
+        command: ["python", "-m", "http.server", "5000"]
