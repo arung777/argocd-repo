@@ -19,25 +19,25 @@ spec:
         - containerPort: 5000
         command: ["python", "-m", "http.server", "5000"]
 
-# ---
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: nodejs-simple-app-deployment
-#   labels:
-#     app: nodejs-simple-app
-# spec:
-#   replicas: 1
-#   selector:
-#     matchLabels:
-#       app: nodejs-simple-app
-#   template:
-#     metadata:
-#       labels:
-#         app: nodejs-simple-app
-#     spec:
-#       containers:
-#       - name: nodejs-simple-app-container
-#         image: "nginxdemos/hello:latest"
-#         ports:
-#         - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-simple-app-deployment
+  labels:
+    app: nodejs-simple-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs-simple-app
+  template:
+    metadata:
+      labels:
+        app: nodejs-simple-app
+    spec:
+      containers:
+      - name: nodejs-simple-app-container
+        image: "nginxdemos/hello:latest"
+        ports:
+        - containerPort: 80
